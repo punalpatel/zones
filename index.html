@@ -1,6 +1,141 @@
 <!doctype html>
-<head><meta charset="utf-8"><title>Zones</title><script type="application/json" id="menu-search-biblio">[]</script></head><body><div id="menu-toggle">☰</div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-toc"><ol class="toc"></ol></div></div><h1 class="version">Stage 0 Draft / March 15, 2016</h1><h1 class="title">Zones</h1>
+<head><meta charset="utf-8"><title>Zones</title><script type="application/json" id="menu-search-biblio">[{"type":"clause","id":"sec-zone-objects","aoid":null,"title":"Zone Objects","number":"1","namespace":"https://domenic.github.io/zones/","location":"","key":"Zone Objects"},{"type":"clause","id":"sec-zone-abstract-operations","aoid":null,"title":"Zone Abstract Operations","number":"1.1","namespace":"https://domenic.github.io/zones/","location":"","key":"Zone Abstract Operations"},{"type":"clause","id":"sec-zone-constructor","aoid":null,"title":"The Zone Constructor","number":"1.2","namespace":"https://domenic.github.io/zones/","location":"","key":"The Zone Constructor"},{"type":"clause","id":"sec-zone","aoid":null,"title":"Zone ( _options_ )","number":"1.2.1","namespace":"https://domenic.github.io/zones/","location":"","key":"Zone ( _options_ )"},{"type":"clause","id":"sec-properties-of-the-zone-constructor","aoid":null,"title":"Properties of the Zone Constructor","number":"1.3","namespace":"https://domenic.github.io/zones/","location":"","key":"Properties of the Zone Constructor"},{"type":"clause","id":"set-get-zone.current","aoid":null,"title":"get Zone.current","number":"1.3.1","namespace":"https://domenic.github.io/zones/","location":"","key":"get Zone.current"},{"type":"clause","id":"sec-properties-of-the-zone-prototype-object","aoid":null,"title":"Properties of the Zone Prototype Object","number":"1.4","namespace":"https://domenic.github.io/zones/","location":"","key":"Properties of the Zone Prototype Object"},{"type":"clause","id":"sec-get-zone.prototype.parent","aoid":null,"title":"get Zone.prototype.parent","number":"1.4.1","namespace":"https://domenic.github.io/zones/","location":"","key":"get Zone.prototype.parent"},{"type":"clause","id":"sec-zone.prototype.fork","aoid":null,"title":"Zone.prototype.fork ( _options_ )","number":"1.4.2","namespace":"https://domenic.github.io/zones/","location":"","key":"Zone.prototype.fork ( _options_ )"},{"type":"clause","id":"sec-zone.prototype.run","aoid":null,"title":"Zone.prototype.run ( _callback_ )","number":"1.4.3","namespace":"https://domenic.github.io/zones/","location":"","key":"Zone.prototype.run ( _callback_ )"},{"type":"clause","id":"sec-zone.prototype.wrap","aoid":null,"title":"Zone.prototype.wrap ( _callback_ )","number":"1.4.4","namespace":"https://domenic.github.io/zones/","location":"","key":"Zone.prototype.wrap ( _callback_ )"},{"type":"clause","id":"sec-properties-of-zone-instances","aoid":null,"title":"Properties of Zone Instances","number":"1.5","namespace":"https://domenic.github.io/zones/","location":"","key":"Properties of Zone Instances"},{"type":"clause","id":"sec-properties-of-zone-instances-name","aoid":null,"title":"name","number":"1.5.1","namespace":"https://domenic.github.io/zones/","location":"","key":"name"},{"type":"table","id":"table-zone-constructor-slots","number":1,"caption":"Table 1: Internal Slots of the Zone Constructor","namespace":"https://domenic.github.io/zones/","location":"","key":"Table 1: Internal Slots of the Zone Constructor"},{"type":"table","id":"table-zone-slots","number":2,"caption":"Table 2: Internal Slots of Zone Instances","namespace":"https://domenic.github.io/zones/","location":"","key":"Table 2: Internal Slots of Zone Instances"},{"type":"term","term":"%Zone%","refId":"sec-zone-constructor","namespace":"https://domenic.github.io/zones/","location":"","key":"%Zone%"},{"type":"term","term":"%ZonePrototype%","refId":"sec-properties-of-the-zone-prototype-object","namespace":"https://domenic.github.io/zones/","location":"","key":"%ZonePrototype%"}]</script></head><body><div id="menu-toggle">☰</div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">◢</span><a href="#sec-zone-objects" title="Zone Objects"><span class="secnum">1</span> Zone Objects</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-zone-abstract-operations" title="Zone Abstract Operations"><span class="secnum">1.1</span> Zone Abstract Operations</a></li><li><span class="item-toggle">◢</span><a href="#sec-zone-constructor" title="The Zone Constructor"><span class="secnum">1.2</span> The Zone Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-zone" title="Zone ( _options_ )"><span class="secnum">1.2.1</span> Zone ( <var>options</var> )</a></li></ol></li><li><span class="item-toggle">◢</span><a href="#sec-properties-of-the-zone-constructor" title="Properties of the Zone Constructor"><span class="secnum">1.3</span> Properties of the Zone Constructor</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#set-get-zone.current" title="get Zone.current"><span class="secnum">1.3.1</span> get Zone.current</a></li></ol></li><li><span class="item-toggle">◢</span><a href="#sec-properties-of-the-zone-prototype-object" title="Properties of the Zone Prototype Object"><span class="secnum">1.4</span> Properties of the Zone Prototype Object</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-get-zone.prototype.parent" title="get Zone.prototype.parent"><span class="secnum">1.4.1</span> get Zone.prototype.parent</a></li><li><span class="item-toggle-none"></span><a href="#sec-zone.prototype.fork" title="Zone.prototype.fork ( _options_ )"><span class="secnum">1.4.2</span> Zone.prototype.fork ( <var>options</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-zone.prototype.run" title="Zone.prototype.run ( _callback_ )"><span class="secnum">1.4.3</span> Zone.prototype.run ( <var>callback</var> )</a></li><li><span class="item-toggle-none"></span><a href="#sec-zone.prototype.wrap" title="Zone.prototype.wrap ( _callback_ )"><span class="secnum">1.4.4</span> Zone.prototype.wrap ( <var>callback</var> )</a></li></ol></li><li><span class="item-toggle">◢</span><a href="#sec-properties-of-zone-instances" title="Properties of Zone Instances"><span class="secnum">1.5</span> Properties of Zone Instances</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-properties-of-zone-instances-name" title="name"><span class="secnum">1.5.1</span> name</a></li></ol></li></ol></li></ol></div></div><h1 class="version">Stage 0 Draft / March 15, 2016</h1><h1 class="title">Zones</h1>
 <script src="https://bterlson.github.io/ecmarkup/ecmarkup.js" defer=""></script>
 <link rel="stylesheet" href="https://bterlson.github.io/ecmarkup/elements.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_light.min.css">
+
+<emu-clause id="sec-zone-objects">
+  <h1><span class="secnum">1</span>Zone Objects<span class="utils"><span class="anchor"><a href="#sec-zone-objects">#</a></span></span></h1>
+
+  <p>A Zone is an object that represents a logical asynchronous context.</p>
+
+  <emu-clause id="sec-zone-abstract-operations">
+    <h1><span class="secnum">1.1</span>Zone Abstract Operations<span class="utils"><span class="anchor"><a href="#sec-zone-abstract-operations">#</a></span></span></h1>
+
+    <p>None yet...</p>
+  </emu-clause>
+
+  <emu-clause id="sec-zone-constructor">
+    <h1><span class="secnum">1.2</span>The Zone Constructor<span class="utils"><span class="anchor"><a href="#sec-zone-constructor">#</a></span></span></h1>
+
+    <p>The Zone constructor is the  <dfn>%Zone%</dfn> intrinsic object and the initial value of the <code>Zone</code> property of the <emu-xref href="#global-object"><a href="https://tc39.github.io/ecma262/#global-object">global object</a></emu-xref>. When called as a constructor it creates and initializes a new Zone object. <code>Zone</code> is not intended to be called as a function and will throw an exception when called in that manner.</p>
+
+    <p>The <code>Zone</code> constructor is designed to be subclassable. It may be used as the value in an <code>extends</code> clause of a class definition. Subclass constructors that intend to inherit the specified <code>Zone</code> behaviour must include a <code>super</code> call to the <code>Zone</code> constructor to create and initialize the subclass instance with the internal state necessary to support the <code>Zone</code> and <code>Zone.prototype</code> built-in methods.</p>
+
+    <emu-clause id="sec-zone">
+      <h1><span class="secnum">1.2.1</span>Zone ( <var>options</var> )<span class="utils"><span class="anchor"><a href="#sec-zone">#</a></span></span></h1>
+
+      <p>When the <code>Zone</code> function is called with argument <var>options</var>, the following steps are taken:</p>
+
+      <emu-alg><ol><li>If NewTarget is <emu-val>undefined</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li><li>Let <var>zone</var> be ? <emu-xref aoid="OrdinaryCreateFromConstructor"><a href="https://tc39.github.io/ecma262/#sec-ordinarycreatefromconstructor">OrdinaryCreateFromConstructor</a></emu-xref>(NewTarget, <code>"%ZonePrototype"</code>, « [[ParentZone]] »).</li><li>TODO.</li><li>Return <var>zone</var>.
+      </li></ol></emu-alg>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-properties-of-the-zone-constructor">
+    <h1><span class="secnum">1.3</span>Properties of the Zone Constructor<span class="utils"><span class="anchor"><a href="#sec-properties-of-the-zone-constructor">#</a></span></span></h1>
+
+    <p>The value of the [[Prototype]] internal slot of the <code>Zone</code> constructor is the intrinsic object <emu-xref href="#sec-properties-of-the-function-constructor"><a href="https://tc39.github.io/ecma262/#sec-properties-of-the-function-constructor">%FunctionPrototype%</a></emu-xref>. The <code>Zone</code> constructor is initially created with the internal slots described in  <emu-xref href="#table-zone-constructor-slots"><a href="#table-zone-constructor-slots">Table 1</a></emu-xref>.</p>
+
+    <emu-table id="table-zone-constructor-slots" caption="Internal Slots of the Zone Constructor"><figure><figcaption>Table 1: Internal Slots of the Zone Constructor</figcaption>
+      <table>
+        <thead>
+          <tr>
+            <th>Internal Slot</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[[CurrentZone]]</td>
+            <td>A <code>Zone</code> object representing the current zone.</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure></emu-table>
+
+    <emu-clause id="set-get-zone.current">
+      <h1><span class="secnum">1.3.1</span>get Zone.current<span class="utils"><span class="anchor"><a href="#set-get-zone.current">#</a></span></span></h1>
+
+      <p><code>Zone.current</code> is an accessor property whose set accessor function is <emu-val>undefined</emu-val>. Its get accessor function performs the following steps:</p>
+
+      <emu-alg><ol><li>Let <var>Z</var> be the <emu-val>this</emu-val> value.</li><li>If <emu-xref aoid="Type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>Z</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li><li>If <var>Z</var> does not have a [[CurrentZone]] internal slot, throw a <emu-val>TypeError</emu-val> exception.</li><li>Return the value of <var>Z</var>'s [[CurrentZone]] internal slot.
+      </li></ol></emu-alg>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-properties-of-the-zone-prototype-object">
+    <h1><span class="secnum">1.4</span>Properties of the Zone Prototype Object<span class="utils"><span class="anchor"><a href="#sec-properties-of-the-zone-prototype-object">#</a></span></span></h1>
+
+    <p>The Zone prototype object is the intrinsic object  <dfn>%ZonePrototype%</dfn>. The value of the [[Prototype]] internal slot of the Zone prototype object is the intrinsic object <emu-xref href="#sec-properties-of-the-object-prototype-object"><a href="https://tc39.github.io/ecma262/#sec-properties-of-the-object-prototype-object">%ObjectPrototype%</a></emu-xref>. The Zone prototype object is an ordinary object. It does not have any of the internal slots of Zone instances.</p>
+
+    <emu-clause id="sec-get-zone.prototype.parent">
+      <h1><span class="secnum">1.4.1</span>get Zone.prototype.parent<span class="utils"><span class="anchor"><a href="#sec-get-zone.prototype.parent">#</a></span></span></h1>
+
+      <p><code>Zone.prototype.parent</code> is an accessor property whose set accessor function is <emu-val>undefined</emu-val>. Its get accessor function performs the following steps:</p>
+
+      <emu-alg><ol><li>Let <var>Z</var> be the <emu-val>this</emu-val> value.</li><li>If <emu-xref aoid="Type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>Z</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li><li>If <var>Z</var> does not have a [[ParentZone]] internal slot, throw a <emu-val>TypeError</emu-val> exception.</li><li>Return the value of <var>Z</var>'s [[ParentZone]] internal slot.
+      </li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-zone.prototype.fork">
+      <h1><span class="secnum">1.4.2</span>Zone.prototype.fork ( <var>options</var> )<span class="utils"><span class="anchor"><a href="#sec-zone.prototype.fork">#</a></span></span></h1>
+
+      <p>When the <code>fork</code> method is called with argument <var>options</var>, the following steps are taken:</p>
+
+      <emu-alg><ol><li>Let <var>Z</var> be the <emu-val>this</emu-val> value.</li><li>If <emu-xref aoid="Type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>Z</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li><li>If <var>Z</var> does not have a [[ParentZone]] internal slot, throw a <emu-val>TypeError</emu-val> exception.</li><li>TODO
+      </li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-zone.prototype.run">
+      <h1><span class="secnum">1.4.3</span>Zone.prototype.run ( <var>callback</var> )<span class="utils"><span class="anchor"><a href="#sec-zone.prototype.run">#</a></span></span></h1>
+
+      <p>When the <code>run</code> method is called with argument <var>callback</var>, the following steps are taken:</p>
+
+      <emu-alg><ol><li>Let <var>Z</var> be the <emu-val>this</emu-val> value.</li><li>If <emu-xref aoid="Type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>Z</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li><li>If <var>Z</var> does not have a [[ParentZone]] internal slot, throw a <emu-val>TypeError</emu-val> exception.</li><li>TODO
+      </li></ol></emu-alg>
+    </emu-clause>
+
+    <emu-clause id="sec-zone.prototype.wrap">
+      <h1><span class="secnum">1.4.4</span>Zone.prototype.wrap ( <var>callback</var> )<span class="utils"><span class="anchor"><a href="#sec-zone.prototype.wrap">#</a></span></span></h1>
+
+      <p>When the <code>wrap</code> method is called with argument <var>callback</var>, the following steps are taken:</p>
+
+      <emu-alg><ol><li>Let <var>Z</var> be the <emu-val>this</emu-val> value.</li><li>If <emu-xref aoid="Type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a></emu-xref>(<var>Z</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li><li>If <var>Z</var> does not have a [[ParentZone]] internal slot, throw a <emu-val>TypeError</emu-val> exception.</li><li>TODO
+      </li></ol></emu-alg>
+    </emu-clause>
+  </emu-clause>
+
+  <emu-clause id="sec-properties-of-zone-instances">
+    <h1><span class="secnum">1.5</span>Properties of Zone Instances<span class="utils"><span class="anchor"><a href="#sec-properties-of-zone-instances">#</a></span></span></h1>
+    <p>Zone instances are ordinary objects that inherit properties from the Zone prototype object (the intrinsic, <emu-xref href="#sec-properties-of-the-zone-prototype-object"><a href="#sec-properties-of-the-zone-prototype-object">%ZonePrototype%</a></emu-xref>). Zone instances are initially created with the internal slots described in  <emu-xref href="#table-zone-slots"><a href="#table-zone-slots">Table 2</a></emu-xref>.</p>
+
+    <emu-table id="table-zone-slots" caption="Internal Slots of Zone Instances"><figure><figcaption>Table 2: Internal Slots of Zone Instances</figcaption>
+      <table>
+        <thead>
+          <tr>
+            <th>Internal Slot</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>[[ParentZone]]</td>
+            <td>The zone in which this zone was created.</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure></emu-table>
+
+    <p>Each Zone instance has the following own property:</p>
+
+    <emu-clause id="sec-properties-of-zone-instances-name">
+      <h1><span class="secnum">1.5.1</span>name<span class="utils"><span class="anchor"><a href="#sec-properties-of-zone-instances-name">#</a></span></span></h1>
+
+      <p>The value of the <code>name</code> property is an integer that indicates the name of the zone, supplied at construction time. It is used for debugging and tooling purposes and does not affect the zone's behavior.</p>
+
+      <p>This property has the attributes { [[Writable]]: <emu-val>false</emu-val>, [[Enumerable]]: <emu-val>false</emu-val>, [[Configurable]]: <emu-val>true</emu-val> }.</p>
+    </emu-clause>
+  </emu-clause>
+</emu-clause>
 </body>
